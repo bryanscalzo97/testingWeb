@@ -1,6 +1,12 @@
-
+import React, {useEffect} from "react";
 
 function App() {
+  useEffect(() => {
+    window.ReactNativeWebView.postMessage('back');
+  
+   
+  }, [])
+  
   const handleBackButton = () => {
     window.ReactNativeWebView.postMessage('back');
     console.log('new deploy2')
