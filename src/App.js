@@ -1,20 +1,13 @@
 import React, {useEffect} from "react";
 
 function App() {
-  useEffect(() => {
-    window.ReactNativeWebView.postMessage('back');
+   useEffect(() => {
+     window.ReactNativeWebView.postMessage('back');
+   }, [])
   
-   
-  }, [])
-  
-  const handleBackButton = () => {
-    window.ReactNativeWebView.postMessage('back');
-    console.log('new deploy2')
-  };
   return (
-     <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-      <p>Example Page</p>
-      <button onClick={handleBackButton}>Close WebView</button>
+     <div style={{ display: "flex", alignItems: "center", justifyContent: "center", backgroundColor: '#080029', height: '100vh' }}>
+      <p style={{color: 'white'}}>Volviendo a Evently ...</p>
     </div>
   );
 }
