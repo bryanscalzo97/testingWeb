@@ -2,8 +2,8 @@
 
 function App() {
   const handleBackButton = () => {
-    window.postMessage('back');
-    console.log('new deploy')
+    window.ReactNativeWebView.postMessage('back');
+    console.log('new deploy2')
   };
   return (
      <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
