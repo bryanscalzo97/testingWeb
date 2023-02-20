@@ -2,7 +2,9 @@
   import axios from "axios";
  function App() {
     const [resp, setResp] = useState('')
-    // function getAllUrlParams(url) {
+    const [id, setId] = useState('')
+    const [result, setResult] = useState('')
+     function getAllUrlParams(url) {
 
     //  // get query string from url (optional) or window
     //  var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
@@ -65,18 +67,18 @@
     //  }
 
     //  return obj;
-    // }
+     }
    async function sendData (customerInternalId, result) {
      try {
        const _datos = {
         //  "customerInternalId": customerInternalId,
-          "customerInternalId": "SICPU6",
+          "customerInternalId": "0JLcAB",
         //  "result": result
          "result": "success"
        }
        const url = 'https://nftminter-production-4518.up.railway.app/api/v1/bookings/payment'
-       const {mssg} = await axios.post(url, _datos, )
-       setResp(mssg)
+        await axios.post(url, _datos, )
+      //  setResp(mssg)
      } catch (error) {
        console.error(error)
        throw error
@@ -85,8 +87,10 @@
      }
    }
      useEffect(() => {
-        //  const urlParams = new URLSearchParams(window.location.search);
-        setResp(new URLSearchParams(window.location.search))
+          const urlParams = new URLSearchParams(window.location.search)
+        setResp(urlParams)
+        setId(getAllUrlParams(urlParams).customerInternalId)
+        setResult(getAllUrlParams(urlParams).customerInternalId)
         //  const customerInternalId = getAllUrlParams(urlParams).customerInternalId;
         //  const result = getAllUrlParams(urlParams).result;
         // // Imprimimos los parámetros en la consola
@@ -101,7 +105,7 @@
 
    return (
       <div style={{ display: "flex", alignItems: "center", justifyContent: "center", backgroundColor: '#080029', height: '100vh' }}>
-       <p style={{color: 'white'}}>Volviendo a Eventlyy ....{resp}+++</p>
+       <p style={{color: 'white'}}>Volviendo a Eventlyy ....url{resp}, id, {id}, result, {result}+++</p>
      </div>
    );
  }
