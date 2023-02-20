@@ -1,7 +1,6 @@
  import React, {useEffect, useState} from "react";
   import axios from "axios";
  function App() {
-    const [id, setId] = useState('')
     //  function getAllUrlParams(url) {
 
     //   // get query string from url (optional) or window
@@ -69,10 +68,10 @@
    async function sendData (customerInternalId, result) {
      try {
        const _datos = {
-        //  "customerInternalId": customerInternalId,
-          "customerInternalId": "JArAxu",
-        //  "result": result
-         "result": "success"
+          "customerInternalId": customerInternalId,
+          //"customerInternalId": "JArAxu",
+          "result": result
+         //"result": "success"
        }
        const url = 'https://nftminter-production-4518.up.railway.app/api/v1/bookings/payment'
         await axios.post(url, _datos, )
@@ -81,28 +80,29 @@
        console.error(error)
        throw error
      } finally {
-        // window.ReactNativeWebView.postMessage('back');
+         window.ReactNativeWebView.postMessage('back');
      }
    }
    
      useEffect(() => {
           const urlParams = new URLSearchParams(window.location.search)
-          const customerId = urlParams.get('customerInternalId');
-          setId(customerId)
+          const customerInternalId = urlParams.get('customerInternalId');
+          const result = urlParams.get('result');
+          // setId(customerId)
         //  const result = getAllUrlParams(urlParams).result;
         // // Imprimimos los parámetros en la consola
         // console.log('customerInternalId:', customerInternalId);
         // console.log(urlParams);
         // console.log('result:', result);
-        //  sendData(customerInternalId, result)
-         sendData()
+          sendData(customerInternalId, result)
+         //sendData()
       // window.ReactNativeWebView.postMessage('back');
         
      }, [])
 
    return (
       <div style={{ display: "flex", alignItems: "center", justifyContent: "center", backgroundColor: '#080029', height: '100vh' }}>
-       <p style={{color: 'white'}}>Volviendo a Eventlyy .. id, {id},+++</p>
+       <p style={{color: 'white'}}>Volviendo a Eventlyy... </p>
      </div>
    );
  }
