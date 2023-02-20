@@ -95,7 +95,7 @@
       
 
     
-      window.ReactNativeWebView.postMessage('back');
+      // window.ReactNativeWebView.postMessage('back');
     }, [])
 
    return (
