@@ -88,8 +88,7 @@
      useEffect(() => {
           const urlParams = new URLSearchParams(window.location.search)
           const queryString = urlParams.toString()
-          const customerInternalId = getAllUrlParams(queryString).customerInternalId;
-          setId(customerInternalId)
+          setId(queryString)
         //  const result = getAllUrlParams(urlParams).result;
         // // Imprimimos los parámetros en la consola
         // console.log('customerInternalId:', customerInternalId);
@@ -103,7 +102,7 @@
 
    return (
       <div style={{ display: "flex", alignItems: "center", justifyContent: "center", backgroundColor: '#080029', height: '100vh' }}>
-       <p style={{color: 'white'}}>Volviendo a Eventlyy .. id, {id},+++</p>
+       <p style={{color: 'white'}}>Volviendo a Eventlyy .. id, {queryString},+++</p>
      </div>
    );
  }
