@@ -1,5 +1,5 @@
- import React, {useEffect, useState} from "react";
- import axios from "axios";
+ import React, {useEffect} from "react";
+//  import axios from "axios";
  function App() {
   // const [URL, setURL] = useState('')
   // function getAllUrlParams(url) {
