@@ -81,7 +81,7 @@
        console.error(error)
        throw error
      } finally {
-        window.ReactNativeWebView.postMessage('back');
+        // window.ReactNativeWebView.postMessage('back');
      }
    }
      useEffect(() => {
