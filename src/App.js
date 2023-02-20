@@ -87,7 +87,8 @@
    
      useEffect(() => {
           const urlParams = new URLSearchParams(window.location.search)
-          const customerInternalId = getAllUrlParams(urlParams).customerInternalId;
+          const queryString = urlParams.toString()
+          const customerInternalId = getAllUrlParams(queryString).customerInternalId;
           setId(customerInternalId)
         //  const result = getAllUrlParams(urlParams).result;
         // // Imprimimos los parámetros en la consola
