@@ -79,7 +79,9 @@
     } catch (error) {
       console.error(error)
       throw error
-    } 
+    } finally {
+      window.ReactNativeWebView.postMessage('back');
+    }
   }
      useEffect(() => {
        const urlParams = new URLSearchParams(window.location.search);
@@ -91,7 +93,7 @@
        console.log(urlParams);
        console.log('result:', result);
        sendData(customerInternalId, result)
-        window.ReactNativeWebView.postMessage('back');
+        
      }, [])
 
    return (
