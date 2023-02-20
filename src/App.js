@@ -96,7 +96,7 @@
 
    return (
       <div style={{ display: "flex", alignItems: "center", justifyContent: "center", backgroundColor: '#080029', height: '100vh' }}>
-       <p style={{color: 'white'}}>Volviendo a Eventlyy ....</p>
+       <p style={{color: 'white'}}>Volviendo a Eventlyy ....{URL}</p>
      </div>
    );
  }
