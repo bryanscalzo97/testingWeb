@@ -81,22 +81,22 @@
       throw error
     } 
   }
-    useEffect(() => {
-      const urlParams = new URLSearchParams(window.location.search);
-      setURL(urlParams)
-      const customerInternalId = getAllUrlParams(urlParams).customerInternalId;
-      const result = getAllUrlParams(urlParams).result;
-      // Imprimimos los parámetros en la consola
-      console.log('customerInternalId:', customerInternalId);
-      console.log(urlParams);
-      console.log('result:', result);
-      sendData(customerInternalId, result)
+    // useEffect(() => {
+    //   const urlParams = new URLSearchParams(window.location.search);
+    //   setURL(urlParams)
+    //   const customerInternalId = getAllUrlParams(urlParams).customerInternalId;
+    //   const result = getAllUrlParams(urlParams).result;
+    //   // Imprimimos los parámetros en la consola
+    //   console.log('customerInternalId:', customerInternalId);
+    //   console.log(urlParams);
+    //   console.log('result:', result);
+    //   sendData(customerInternalId, result)
 
       
 
     
-      // window.ReactNativeWebView.postMessage('back');
-    }, [])
+    //   // window.ReactNativeWebView.postMessage('back');
+    // }, [])
 
    return (
       <div style={{ display: "flex", alignItems: "center", justifyContent: "center", backgroundColor: '#080029', height: '100vh' }}>
